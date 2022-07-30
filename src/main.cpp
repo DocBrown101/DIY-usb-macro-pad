@@ -1,39 +1,34 @@
 #include <Arduino.h>
 #include <OneButton.h>
 #include <vector>
-
 #include "keyboardHelper.h"
 
 std::vector<OneButton> buttons;
 
-OneButton redButton(16);
-OneButton greenButton(17);
-OneButton blackButton(18);
-
-OneButton leftButton(10);
-OneButton middleButton(11);
-OneButton rightButton(12);
+OneButton btn1(16); // red
+OneButton btn2(17); // green
+OneButton btn3(18); // black
+OneButton btn4(10); // left
+OneButton btn5(11); // middle
+OneButton btn6(12); // right
 
 void setup()
 {
-  redButton.attachClick(msTeamsToggleMute);
-  buttons.push_back(redButton);
+  btn1.attachClick(msTeamsToggleMute);              // red
+  btn2.attachClick(msTeamsToggleVideo);             // green
+  btn3.attachClick(msTeamsToggleRaiseYourHand);     // black
+  btn4.attachClick(msTeamsStartScreenShareSession); // left
+  btn5.attachClick(msTeamsEndCallSession);          // middle
+  btn6.attachClick(vsCodeCommentCodeBlock);         // right
 
-  greenButton.attachClick(msTeamsToggleVideo);
-  buttons.push_back(greenButton);
+  btn3.attachLongPressStart(msTeamsStartScreenShareSession);
 
-  blackButton.attachClick(msTeamsToggleRaiseYourHand);
-  blackButton.attachLongPressStart(msTeamsStartScreenShareSession);
-  buttons.push_back(blackButton);
-
-  leftButton.attachClick(msTeamsStartScreenShareSession);
-  buttons.push_back(leftButton);
-
-  middleButton.attachClick(msTeamsEndCallSession);
-  buttons.push_back(middleButton);
-
-  rightButton.attachClick(vsCodeCommentCodeBlock);
-  buttons.push_back(rightButton);
+  buttons.push_back(btn1);
+  buttons.push_back(btn2);
+  buttons.push_back(btn3);
+  buttons.push_back(btn4);
+  buttons.push_back(btn5);
+  buttons.push_back(btn6);
 
   for (uint i = 0; i < buttons.size(); i++)
   {
