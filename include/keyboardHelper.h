@@ -14,6 +14,13 @@ void vsCodeCommentCodeBlock()
   keyboard.key_code('a', KEY_ALT | KEY_SHIFT); // Alt+Shift+A - Toggle block comment
 }
 
+void vsCodeFormatSelection()
+{
+  keyboard.key_code('k', KEY_CTRL); // Ctrl+K 
+  delay(100);
+  keyboard.key_code('f', KEY_CTRL); // Ctrl+F
+}
+
 // https://support.microsoft.com/en-us/office/keyboard-shortcuts-for-microsoft-teams-2e8e2a70-e8d8-4a19-949b-4c36dd5292d2
 void msTeamsToggleRaiseYourHand()
 {
@@ -38,6 +45,28 @@ void msTeamsStartScreenShareSession()
 void msTeamsEndCallSession()
 {
   keyboard.key_code('h', KEY_CTRL | KEY_SHIFT); // Ctrl+Shift+H - End audio / video call
+}
+
+void mediaToggleMute() {
+  keyboard.media_control(KEY_MUTE);
+}
+
+void mediaVolumeUp() {
+  keyboard.media_control(KEY_VOLUME_UP);
+}
+
+void mediaVolumeUpDelayed() {
+  keyboard.media_control(KEY_VOLUME_UP);
+  delay(75);
+}
+
+void mediaVolumeDown() {
+  keyboard.media_control(KEY_VOLUME_DOWN);
+}
+
+void mediaVolumeDownDelayed() {
+  keyboard.media_control(KEY_VOLUME_DOWN);
+  delay(75);
 }
 
 #endif

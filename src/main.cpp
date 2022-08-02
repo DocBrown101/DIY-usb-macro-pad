@@ -16,12 +16,18 @@ void setup()
 {
   btn1.attachClick(msTeamsToggleMute);              // red
   btn2.attachClick(msTeamsToggleVideo);             // green
-  btn3.attachClick(msTeamsToggleRaiseYourHand);     // black
-  btn4.attachClick(msTeamsStartScreenShareSession); // left
-  btn5.attachClick(msTeamsEndCallSession);          // middle
+  btn3.attachClick(mediaToggleMute);                // black
+  btn4.attachClick(mediaVolumeUp);                  // left
+  btn5.attachClick(mediaVolumeDown);                // middle
   btn6.attachClick(vsCodeCommentCodeBlock);         // right
 
-  btn3.attachLongPressStart(msTeamsStartScreenShareSession);
+  btn1.attachLongPressStart(msTeamsEndCallSession);           // red
+  btn2.attachLongPressStart(msTeamsStartScreenShareSession);  // green
+  btn3.attachLongPressStart(msTeamsToggleRaiseYourHand);      // black
+  btn6.attachLongPressStart(vsCodeFormatSelection);           // right
+
+  btn4.attachDuringLongPress(mediaVolumeUpDelayed);           // left
+  btn5.attachDuringLongPress(mediaVolumeDownDelayed);         // middle
 
   buttons.push_back(btn1);
   buttons.push_back(btn2);
