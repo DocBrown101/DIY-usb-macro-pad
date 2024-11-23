@@ -22,7 +22,7 @@ void vsCodeFormatSelection()
 }
 
 // https://support.microsoft.com/en-us/office/keyboard-shortcuts-for-microsoft-teams-2e8e2a70-e8d8-4a19-949b-4c36dd5292d2
-void msTeamsToggleRaiseYourHand()
+void msTeamsToggleRaiseHand()
 {
   keyboard.key_code('k', KEY_CTRL | KEY_SHIFT); // Ctrl+Shift+K - Raise or lower your hand
 }
@@ -37,12 +37,12 @@ void msTeamsToggleMute()
   keyboard.key_code('m', KEY_CTRL | KEY_SHIFT); // Ctrl+Shift+M - Toggle mute
 }
 
-void msTeamsStartScreenShareSession()
+void msTeamsStartScreenShare()
 {
-  keyboard.key_code('e', KEY_CTRL | KEY_SHIFT); // Ctrl+Shift+E - Start screen share session
+  keyboard.key_code('e', KEY_CTRL | KEY_SHIFT); // Ctrl+Shift+E - Start screen share
 }
 
-void msTeamsEndCallSession()
+void msTeamsEndCall()
 {
   keyboard.key_code('h', KEY_CTRL | KEY_SHIFT); // Ctrl+Shift+H - End audio / video call
 }

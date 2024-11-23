@@ -5,29 +5,44 @@
 
 std::vector<OneButton> buttons;
 
-OneButton btn1(16); // red
-OneButton btn2(17); // green
-OneButton btn3(18); // black
-OneButton btn4(10); // left
-OneButton btn5(11); // middle
-OneButton btn6(12); // right
+/*
+Physical layout of the USB Macro Pad with button functions:
+
++-----------------------------------+------------------------------------+-----------------------------------+
+| btn3 (black)                      | btn2 (green)                       | btn1 (red)                        |
+| Pin: 18                           | Pin: 17                            | Pin: 16                           |
+| Click: mediaToggleMute            | Click: msTeamsToggleVideo          | Click: msTeamsToggleMute          |
+| LongPress: msTeamsToggleRaiseHand | LongPress: msTeamsStartScreenShare | LongPress: msTeamsEndCall         |
++-----------------------------------+------------------------------------+-----------------------------------+
+| btn4 (left)                       | btn5 (middle)                      | btn6 (right)                      |
+| Pin: 10                           | Pin: 11                            | Pin: 12                           |
+| Click: mediaVolumeUp              | Click: mediaVolumeDown             | Click: vsCodeCommentCodeBlock     |
+| Hold: mediaVolumeUpDelayed        | Hold: mediaVolumeDownDelayed       | LongPress: vsCodeFormatSelection  |
++-----------------------------------+------------------------------------+-----------------------------------+
+*/
+OneButton btn1(16);
+OneButton btn2(17);
+OneButton btn3(18);
+OneButton btn4(10);
+OneButton btn5(11);
+OneButton btn6(12);
 
 void setup()
 {
-  btn1.attachClick(msTeamsToggleMute);              // red
-  btn2.attachClick(msTeamsToggleVideo);             // green
-  btn3.attachClick(mediaToggleMute);                // black
-  btn4.attachClick(mediaVolumeUp);                  // left
-  btn5.attachClick(mediaVolumeDown);                // middle
-  btn6.attachClick(vsCodeCommentCodeBlock);         // right
+  btn1.attachClick(msTeamsToggleMute);
+  btn2.attachClick(msTeamsToggleVideo);
+  btn3.attachClick(mediaToggleMute);
+  btn4.attachClick(mediaVolumeUp);
+  btn5.attachClick(mediaVolumeDown);
+  btn6.attachClick(vsCodeCommentCodeBlock);
 
-  btn1.attachLongPressStart(msTeamsEndCallSession);           // red
-  btn2.attachLongPressStart(msTeamsStartScreenShareSession);  // green
-  btn3.attachLongPressStart(msTeamsToggleRaiseYourHand);      // black
-  btn6.attachLongPressStart(vsCodeFormatSelection);           // right
+  btn1.attachLongPressStart(msTeamsEndCall);
+  btn2.attachLongPressStart(msTeamsStartScreenShare);
+  btn3.attachLongPressStart(msTeamsToggleRaiseHand);
+  btn6.attachLongPressStart(vsCodeFormatSelection);
 
-  btn4.attachDuringLongPress(mediaVolumeUpDelayed);           // left
-  btn5.attachDuringLongPress(mediaVolumeDownDelayed);         // middle
+  btn4.attachDuringLongPress(mediaVolumeUpDelayed);
+  btn5.attachDuringLongPress(mediaVolumeDownDelayed);
 
   buttons.push_back(btn1);
   buttons.push_back(btn2);
@@ -38,8 +53,8 @@ void setup()
 
   for (uint i = 0; i < buttons.size(); i++)
   {
-    buttons.at(i).setDebounceTicks(40);
-    buttons.at(i).setClickTicks(150);
+    buttons.at(i).setDebounceMs(40);
+    buttons.at(i).setClickMs(150);
   }
 }
 
