@@ -2,7 +2,6 @@
 #define keyboardHelper_H
 
 #include <Arduino.h>
-#include "PluggableUSBHID.h"
 #include "USBKeyboard.h"
 
 // https://github.com/arduino/ArduinoCore-mbed/blob/master/libraries/USBHID/src/USBKeyboard.h
