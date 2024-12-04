@@ -69,4 +69,8 @@ void mediaVolumeDownDelayed() {
   delay(75);
 }
 
+void sendDropboxUrl() {
+  keyboard.printf("https://www.dropbox.com/account/plan?role=personal");
+}
+
 #endif

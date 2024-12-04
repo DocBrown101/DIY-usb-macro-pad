@@ -41,6 +41,8 @@ void setup()
   btn3.attachLongPressStart(msTeamsToggleRaiseHand);
   btn6.attachLongPressStart(vsCodeFormatSelection);
 
+  btn5.attachDoubleClick(sendDropboxUrl);
+
   btn4.attachDuringLongPress(mediaVolumeUpDelayed);
   btn5.attachDuringLongPress(mediaVolumeDownDelayed);
 
