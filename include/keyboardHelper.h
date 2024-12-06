@@ -9,19 +9,19 @@
 
 void initKeyboard()
 {
-  Keyboard.begin();
+  BootKeyboard.begin();
 }
 
 // https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
 void vsCodeCommentCodeBlock()
 {
   // Alt+Shift+A - Toggle block comment
-  Keyboard.press(KEY_LEFT_ALT);
-  Keyboard.press(KEY_LEFT_SHIFT);
-  Keyboard.press('a');
+  BootKeyboard.press(KEY_LEFT_ALT);
+  BootKeyboard.press(KEY_LEFT_SHIFT);
+  BootKeyboard.press('a');
 
   delay(100);
-  Keyboard.releaseAll();
+  BootKeyboard.releaseAll();
 }
 
 void vsCodeFormatSelection()
@@ -35,12 +35,12 @@ void vsCodeFormatSelection()
 void msTeamsToggleRaiseHand()
 {
   // Ctrl+Shift+K - Raise or lower your hand
-  Keyboard.press(KEY_LEFT_CTRL);
-  Keyboard.press(KEY_LEFT_SHIFT);
-  Keyboard.press('k');
+  BootKeyboard.press(KEY_LEFT_CTRL);
+  BootKeyboard.press(KEY_LEFT_SHIFT);
+  BootKeyboard.press('k');
 
   delay(100);
-  Keyboard.releaseAll();
+  BootKeyboard.releaseAll();
 }
 
 void msTeamsToggleVideo()
@@ -65,7 +65,7 @@ void msTeamsEndCall()
 
 void mediaToggleMute()
 {
-  Keyboard.write(KEY_VOLUME_MUTE);
+  BootKeyboard.write(KEY_VOLUME_MUTE);
   // keyboard.media_control(KEY_MUTE);
 }
 
@@ -93,7 +93,7 @@ void mediaVolumeDownDelayed()
 
 void sendDropboxUrl()
 {
-  Keyboard.print("https://www.dropbox.com/account/plan?role=personal");
+  BootKeyboard.print("https://www.dropbox.com/account/plan?role=personal");
 }
 
 #endif
